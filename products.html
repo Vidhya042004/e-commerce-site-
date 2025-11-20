@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - RedStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" width="125px" alt="RedStore Logo"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="images/cart.png" width="30px" height="30px" alt="Cart"></a>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()" alt="Menu">
+        </div>
+    </div>  
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>All Products</h2>
+            <select onchange="sortProducts(this.value)">
+                <option value="">Default Sorting</option>
+                <option value="price-low">Sort by price: Low to High</option>
+                <option value="price-high">Sort by price: High to Low</option>
+                <option value="popularity">Sort by popularity</option>
+                <option value="rating">Sort by rating</option>
+            </select>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/product-1.jpg" alt="Red Printed T-Shirt">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+                <button onclick="addToCart(this, 'Red Printed T-Shirt', 50.00)" class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="col-4">
+                <img src="images/product-2.jpg" alt="Black Sports Shoes">
+                <h4>Black Sports Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$75.00</p>
+                <button onclick="addToCart(this, 'Black Sports Shoes', 75.00)" class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="col-4">
+                <img src="images/product-3.jpg" alt="Gray Trackpants">
+                <h4>Gray Trackpants</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$45.00</p>
+                <button onclick="addToCart(this, 'Gray Trackpants', 45.00)" class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="col-4">
+                <img src="images/product-4.jpg" alt="Blue T-Shirt">
+                <h4>Blue T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$35.00</p>
+                <button onclick="addToCart(this, 'Blue T-Shirt', 35.00)" class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-4">
+                <img src="images/product-5.jpg" alt="White Sneakers">
+                <h4>White Sneakers</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$120.00</p>
+                <button onclick="addToCart(this, 'White Sneakers', 120.00)" class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="col-4">
+                <img src="images/product-6.jpg" alt="Black T-Shirt">
+                <h4>Black T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$40.00</p>
+                <button onclick="addToCart(this, 'Black T-Shirt', 40.00)" class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="col-4">
+                <img src="images/product-7.jpg" alt="Casual Socks">
+                <h4>Casual Socks</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$15.00</p>
+                <button onclick="addToCart(this, 'Casual Socks', 15.00)" class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="col-4">
+                <img src="images/product-8.jpg" alt="Black Watch">
+                <h4>Black Watch</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$200.00</p>
+                <button onclick="addToCart(this, 'Black Watch', 200.00)" class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-4">
+                <img src="images/product-9.jpg" alt="Red T-Shirt">
+                <h4>Red T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$30.00</p>
+                <button onclick="addToCart(this, 'Red T-Shirt', 30.00)" class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="col-4">
+                <img src="images/product-10.jpg" alt="Sports Shoes">
+                <h4>Sports Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$85.00</p>
+                <button onclick="addToCart(this, 'Sports Shoes', 85.00)" class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="col-4">
+                <img src="images/product-11.jpg" alt="Gray Shoes">
+                <h4>Gray Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$95.00</p>
+                <button onclick="addToCart(this, 'Gray Shoes', 95.00)" class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="col-4">
+                <img src="images/product-12.jpg" alt="Blue Shorts">
+                <h4>Blue Shorts</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$25.00</p>
+                <button onclick="addToCart(this, 'Blue Shorts', 25.00)" class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="page-btn">
+            <span onclick="loadPage(1)" class="active">1</span>
+            <span onclick="loadPage(2)">2</span>
+            <span onclick="loadPage(3)">3</span>
+            <span onclick="loadPage(4)">4</span>
+            <span onclick="loadPage('next')">&#8594;</span>
+        </div>
+    </div>
+
+    <!------------footer--------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png" alt="Google Play Store">
+                        <img src="images/app-store.png" alt="Apple App Store">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png" alt="RedStore Logo">
+                    <p>Our purpose is to sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">&copy; Copyright 2024</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    </body>
+    </html>
